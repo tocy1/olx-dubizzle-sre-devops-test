@@ -1,0 +1,35 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    run: "{{ .Release.Name }}"
+    chart: "{{ .Chart.Name }}-{{ .Chart.Version }}"    
+  name: "{{ .Release.Name }}"
+  namespace: default
+spec:
+  replicas: {{ .Values.replicaCount }}
+  selector:
+    matchLabels:
+      run: "{{ .Release.Name }}"
+  template:
+    metadata:
+      labels:
+        run: "{{ .Release.Name }}"
+    spec:
+      {{- if .Values.image.pullSecret }}    
+            imagePullSecrets:
+              - name: "{{ .Values.image.pullSecret }}"
+      {{- end }}          
+      containers:
+      - image: {{ .Values.image.repository }}:{{ .Values.image.tag }}
+        imagePullPolicy: {{ .Values.image.pullPolicy }}
+        name: nginx
+      - image: {{ .Values.image.repositoryb }}:{{ .Values.image.tagb }}
+        imagePullPolicy: {{ .Values.image.pullPolicy }}
+        name: dubizzle
+        ports:
+        - containerPort: {{ .Values.service.port }}
+          protocol: TCP
+        - containerPort: {{ .Values.service.portb }}
+          protocol: TCP
+      

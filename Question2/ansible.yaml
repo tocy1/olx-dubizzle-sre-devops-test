@@ -1,0 +1,7 @@
+---
+- tasks:
+  - name: deploy all created k8s objects
+    k8s:
+      state: present
+      src: ./
+      kubeconfig: /

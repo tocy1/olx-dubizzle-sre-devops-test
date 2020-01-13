@@ -1,0 +1,47 @@
+{
+    "DBCluster": {
+    "AllocatedStorage": 1,
+    "AvailabilityZones": [
+        "eu-west-1c",
+        "eu-west-1a",
+        "eu-west-1b"
+    ],
+    "BackupRetentionPeriod": 1,
+    "DatabaseName": "olx",
+    "DBClusterIdentifier": "aurora-cluster-demo",
+    "DBClusterParameterGroup": "default.aurora-mysql5.7",
+    "DBSubnetGroup": "main",
+    "Status": "deleting",
+    "EarliestRestorableTime": "2020-01-11T00:15:20.414Z",
+    "Endpoint": "aurora-cluster-demo.cluster-cxga7nadzr7f.eu-west-1.rds.amazonaws.com",
+    "ReaderEndpoint": "aurora-cluster-demo.cluster-ro-cxga7nadzr7f.eu-west-1.rds.amazonaws.com",
+    "MultiAZ": false,
+    "Engine": "aurora-mysql",
+    "EngineVersion": "5.7.mysql_aurora.2.03.2",
+    "LatestRestorableTime": "2020-01-11T00:15:20.414Z",
+    "Port": 3306,
+    "MasterUsername": "olx",
+    "PreferredBackupWindow": "04:25-04:55",
+    "PreferredMaintenanceWindow": "sat:01:53-sat:02:23",
+    "ReadReplicaIdentifiers": [],
+    "DBClusterMembers": [],
+    "VpcSecurityGroups": [
+        {
+            "VpcSecurityGroupId": "sg-0b3a942c2adede904",
+            "Status": "active"
+        }
+    ],
+    "HostedZoneId": "Z29XKXDKYMONMX",
+    "StorageEncrypted": false,
+    "DbClusterResourceId": "cluster-6CJITKEVOXFAIS6AQCT7WCBKHI",
+    "DBClusterArn": "arn:aws:rds:eu-west-1:060948813048:cluster:aurora-cluster-demo",
+    "AssociatedRoles": [],
+    "IAMDatabaseAuthenticationEnabled": false,
+    "ClusterCreateTime": "2020-01-11T00:14:22.483Z",
+    "EngineMode": "provisioned",
+    "DeletionProtection": false,
+    "HttpEndpointEnabled": false,
+    "CopyTagsToSnapshot": false,
+    "CrossAccountClone": false
+    }
+}
